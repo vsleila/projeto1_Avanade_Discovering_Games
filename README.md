@@ -35,7 +35,7 @@ de sua caixa de jogos de tabuleiro personalizada. Os assinantes podem escolher e
 ## ✔️ Objetivo
 
 A proposta do projeto é aplicar os conhecimentos aprendidos durante as aulas. 
-A linguagem utilizada é JavaScript.
+A linguagem utilizada: JavaScript.
 
 
 ## ✔️  Autores
