@@ -1,6 +1,6 @@
 const readline = require('readline');
 const { planoDeAssinatura } = require('./planoDeAssinatura');
-
+const { exportarDadosParaJSON } = require('./saidaJson');
 
 // Função para armazenar os dados em um array para JSON
 let dadosArray = []; 
@@ -8,6 +8,7 @@ let dadosArray = [];
 function armazenarEExportarDados(dados) {
     dadosArray.push(dados);
     console.log("Dados armazenados:", dadosArray);
+    exportarDadosParaJSON(dadosArray);
 }
 
 function digitaLogin(rl, callback) {
@@ -25,7 +26,7 @@ function digitaLogin(rl, callback) {
     });
 }
 
-function solicitaCadastroNoSistema(rl) {
+function solicitaCadastroNoSistema(rl, callback) {
     console.log("Por favor, preencha as informações abaixo para criar sua conta:");
     
     rl.question("Nome do usuário: ", (nomeUsuario) => {
@@ -42,11 +43,7 @@ function solicitaCadastroNoSistema(rl) {
                             senha: senha,
                             plano: dadosPlano
                         };
-                        armazenarDados(dadosCadastro);
-                        exportarDadosParaJSON();
-                        console.log("Dados armazenados:", dadosCadastro);
-
-                        process.exit();
+                        callback(dadosCadastro);
                     });
                 });
             });

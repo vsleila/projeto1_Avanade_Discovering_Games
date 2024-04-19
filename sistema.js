@@ -1,6 +1,7 @@
 const readline = require('readline');
 const { digitaLogin, solicitaCadastroNoSistema, armazenarEExportarDados } = require('./interfaceUsuario');
 
+
 class Sistema {
     constructor() {
         this.rl = readline.createInterface({
